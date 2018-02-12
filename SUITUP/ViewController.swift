@@ -20,8 +20,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("works")
-        lolyouredumb.text? = "Kiss me Devanshi! - Abhijith"
+        print("hi")
     }
 
     
