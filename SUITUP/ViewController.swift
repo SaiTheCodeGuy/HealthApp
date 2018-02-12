@@ -20,7 +20,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("hi")
+        print("hi I'm dum")
     }
 
     
