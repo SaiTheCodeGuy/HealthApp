@@ -14,9 +14,6 @@
 		643B9424203236BD0094CD58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643B9422203236BD0094CD58 /* LaunchScreen.storyboard */; };
 		643B942F203236BD0094CD58 /* SUITUPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B942E203236BD0094CD58 /* SUITUPTests.swift */; };
 		643B943A203236BD0094CD58 /* SUITUPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B9439203236BD0094CD58 /* SUITUPUITests.swift */; };
-		643B944820323D520094CD58 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B944720323D520094CD58 /* HealthKitSetupAssistant.swift */; };
-		643B944B20323DC50094CD58 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B944920323DC40094CD58 /* ProfileDataStore.swift */; };
-		643B944C20323DC50094CD58 /* WorkoutDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B944A20323DC50094CD58 /* WorkoutDataStore.swift */; };
 		643B945020323E5D0094CD58 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643B944F20323E5D0094CD58 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,9 +48,6 @@
 		643B9435203236BD0094CD58 /* SUITUPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUITUPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		643B9439203236BD0094CD58 /* SUITUPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUITUPUITests.swift; sourceTree = "<group>"; };
 		643B943B203236BD0094CD58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		643B944720323D520094CD58 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
-		643B944920323DC40094CD58 /* ProfileDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
-		643B944A20323DC50094CD58 /* WorkoutDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDataStore.swift; sourceTree = "<group>"; };
 		643B944D20323E5D0094CD58 /* SUITUP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SUITUP.entitlements; sourceTree = "<group>"; };
 		643B944F20323E5D0094CD58 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -109,11 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				643B944D20323E5D0094CD58 /* SUITUP.entitlements */,
-				643B9419203236BD0094CD58 /* AppDelegate.swift */,
-				643B944720323D520094CD58 /* HealthKitSetupAssistant.swift */,
 				643B941B203236BD0094CD58 /* ViewController.swift */,
-				643B944920323DC40094CD58 /* ProfileDataStore.swift */,
-				643B944A20323DC50094CD58 /* WorkoutDataStore.swift */,
+				643B9419203236BD0094CD58 /* AppDelegate.swift */,
 				643B941D203236BD0094CD58 /* Main.storyboard */,
 				643B9420203236BD0094CD58 /* Assets.xcassets */,
 				643B9422203236BD0094CD58 /* LaunchScreen.storyboard */,
@@ -287,9 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				643B944820323D520094CD58 /* HealthKitSetupAssistant.swift in Sources */,
-				643B944B20323DC50094CD58 /* ProfileDataStore.swift in Sources */,
-				643B944C20323DC50094CD58 /* WorkoutDataStore.swift in Sources */,
 				643B941C203236BD0094CD58 /* ViewController.swift in Sources */,
 				643B941A203236BD0094CD58 /* AppDelegate.swift in Sources */,
 			);

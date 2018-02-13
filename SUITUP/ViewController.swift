@@ -13,8 +13,6 @@ class ViewController: UIViewController
 {
     
     
-    @IBOutlet weak var lolyouredumb: UILabel!
-    
     
 
     override func viewDidLoad()
