@@ -73,13 +73,28 @@
                     <view key="view" contentMode="scaleToFill" id="sXN-Xw-hb1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLF-yc-4Ee">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="3jU-oc-T3h">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="V0s-qc-2HJ">
+                                            <connections>
+                                                <segue destination="XZA-qM-vAB" kind="show" id="LNp-eT-opo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QGY-qM-Ftp"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJV-26-fzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="104"/>
+            <point key="canvasLocation" x="35" y="104"/>
         </scene>
     </scenes>
 </document>
