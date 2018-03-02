@@ -21,6 +21,7 @@ class ViewController: UIViewController
         super.viewDidLoad()
         getHealthKitPermission()
         
+        readSteps()
            
         
     }
