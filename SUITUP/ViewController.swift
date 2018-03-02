@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  HealthHack
 //
-//  Created by Ronak Chaudhuri on 2/13/18.
-//  Copyright © 2018 Ronak Chaudhuri. All rights reserved.
+//  Created by Sai Girap on 2/13/18.
+//  Copyright © 2018 Sai Girap. All rights reserved.
 //
 
 import UIKit
