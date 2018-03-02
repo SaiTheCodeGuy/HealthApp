@@ -9,28 +9,7 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Zyn-Mp-8cp">
-            <objects>
-                <navigationController id="EDu-bu-ugp" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CoB-Xv-nDm">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="XZA-qM-vAB" kind="show" id="L0L-OD-Qod"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eJS-tf-X9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1803" y="104"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="N5k-rr-h25">
             <objects>
@@ -47,9 +26,6 @@
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="9ql-Od-JgL"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTU-yu-y8R">
                                 <rect key="frame" x="273" y="642" width="141" height="74"/>
@@ -68,6 +44,10 @@
                                 <state key="normal" title="Health Stats">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="healthStats:" destination="4XY-P2-taf" eventType="touchUpInside" id="FKN-nR-XSA"/>
+                                    <segue destination="jnf-7z-0bD" kind="show" id="eVA-Vd-Lca"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health Hack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWv-um-T7p">
                                 <rect key="frame" x="73" y="0.0" width="268" height="94"/>
@@ -80,47 +60,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cDR-NP-vSa"/>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="dgM-5e-djV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jA-pg-TYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4XY-P2-taf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1042.0289855072465" y="103.53260869565219"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="zZs-5D-O0x">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SUITUP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="jnf-7z-0bD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sXN-Xw-hb1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-SR-NzU">
-                                <rect key="frame" x="129" y="44" width="125" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHh-D5-gU3">
-                                <rect key="frame" x="44" y="285" width="370" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QGY-qM-Ftp"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NJV-26-fzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72.463768115942031" y="169.56521739130437"/>
+            <point key="canvasLocation" x="-226" y="104"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="dgM-5e-djV"/>
-    </inferredMetricsTieBreakers>
 </document>
