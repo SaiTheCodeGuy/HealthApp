@@ -117,6 +117,11 @@
                                     <segue destination="XZA-qM-vAB" kind="show" id="KfN-QT-YON"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eml-1p-GaT">
+                                <rect key="frame" x="335" y="622" width="65" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="bulletButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="m2p-5U-0w7"/>
@@ -127,6 +132,9 @@
             <point key="canvasLocation" x="0.0" y="350"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bulletButton" width="115" height="125"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KfN-QT-YON"/>
     </inferredMetricsTieBreakers>

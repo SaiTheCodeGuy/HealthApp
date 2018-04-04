@@ -18,7 +18,7 @@
 		7BDE9C2F2049F4DA0011794E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE9C2E2049F4DA0011794E /* GameScene.swift */; };
 		7BDE9C312049F4E10011794E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE9C302049F4E10011794E /* GameViewController.swift */; };
 		7BDE9C332049F4EB0011794E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7BDE9C322049F4EB0011794E /* Actions.sks */; };
-		7BDE9C352049F4FF0011794E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7BDE9C342049F4FF0011794E /* GameScene.sks */; };
+		7BF3678E2056C36F00832D70 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3678D2056C36E00832D70 /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		7BDE9C2E2049F4DA0011794E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		7BDE9C302049F4E10011794E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7BDE9C322049F4EB0011794E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		7BDE9C342049F4FF0011794E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		7BF3678D2056C36E00832D70 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = ../../b/b/GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +112,8 @@
 			children = (
 				643B944D20323E5D0094CD58 /* SUITUP.entitlements */,
 				7BDE9C2E2049F4DA0011794E /* GameScene.swift */,
-				7BDE9C342049F4FF0011794E /* GameScene.sks */,
 				7BDE9C302049F4E10011794E /* GameViewController.swift */,
+				7BF3678D2056C36E00832D70 /* GameScene.sks */,
 				7BDE9C322049F4EB0011794E /* Actions.sks */,
 				643B9419203236BD0094CD58 /* AppDelegate.swift */,
 				643A94D52073179300DCE16D /* Main.storyboard */,
