@@ -10,80 +10,159 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+
+
+    var egg = SKSpriteNode()
+    var isJumping = false
+    var isTouching = false
+    var player = SKSpriteNode()
+    var line = SKSpriteNode()
+    var Bullet = SKSpriteNode()
+    var cpu = SKSpriteNode()
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
-    
-    override func didMove(to view: SKView) {
+
+    override func didMove(to view: SKView)
+    {
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+
+        player = SKSpriteNode(color: UIColor.blue, size: CGSize(width: 90, height: 90))
+        player.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        player.position = CGPoint(x: 0, y: -520)
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        self.addChild(player)
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        line = SKSpriteNode(color: UIColor.red, size: CGSize(width: 1000, height: 5))
+        line.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        line.position = CGPoint(x: 0, y: -350)
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
-    }
-    
-    
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
+        self.addChild(line)
+
         
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        cpu = SKSpriteNode(color: UIColor.red, size: CGSize(width: 90, height: 90))
+        cpu.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        cpu.position = CGPoint(x: 0, y: 520)
+
+        self.addChild(cpu)
+        
+      
+
     }
+
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        shootingBullets()
+        cpuBullet()
+        //let randomNumber = Int(arc4random_uniform(750))
+        let wait = SKAction.wait(forDuration: 1.0)
+        //cpu.position = CGPoint(x: Int(randomNumber - 375), y: 520)
+        var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.width, duration: 1)
+        let cpuSequence = SKAction.sequence([moveCpu])
+        var unlimited = 1
+        
+//        while unlimited < 2
+//        {
+//        if cpu.position == CGPoint(x: -375, y: 520)
+//        {
+//
+//            var moveCpu = SKAction.moveTo(x:self.size.width - cpu.size.width, duration: 1)
+//
+//        }
+//        else if cpu.position == CGPoint(x: 375, y: 520)
+//        {
+//
+//            var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.width, duration: 1)
+//        }
+//          else if cpu.position == CGPoint(x: 0, y: 520)
+//            {
+//
+//                var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.height, duration: 1)
+//
+//                print("Hi")
+//            }
+// cpu.run(cpuSequence)
+//
+//
+//        }
+
+        cpu.run(cpuSequence)
+
+        
+        
+        
+//            cpu.position = CGPoint(x: Int(randomNumber - 375), y: 520)
+         //   cpu.run(SKAction.sequence([wait]))
+       
+        
+    }
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+
+        for touch in touches
+        {
+
+            let location = touch.location(in: self)
+            player.position.x = location.x
+            player.position.y = location.y
+            
+            if player.position.y > -400
+            {
+                player.position.y = -400
+            }
+        }
+       
+
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+
     }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        
+        
     }
-    
-    
-    override func update(_ currentTime: TimeInterval) {
+
+
+    override func update(_ currentTime: TimeInterval)
+    {
         // Called before each frame is rendered
     }
-}
+   func shootingBullets()
+    {
+        var Bullet = SKSpriteNode(imageNamed: "Bullet")
+        Bullet.setScale(0.3)
+        Bullet.zPosition = -5
+        Bullet.position = player.position
+        self.addChild(Bullet)
+        
+        let moveBullet = SKAction.moveTo(y: self.size.height + Bullet.size.height, duration: 1)
+        let deleteBullet = SKAction.removeFromParent()
+        let bulletSequence = SKAction.sequence([moveBullet, deleteBullet])
+        Bullet.run(bulletSequence)
+        
+    }
+    func cpuBullet()
+    {
+        var cpuBullet = SKSpriteNode(imageNamed: "BulletDown")
+        cpuBullet.setScale(0.3)
+        
+        cpuBullet.zPosition = -5
+        cpuBullet.position = cpu.position
+        self.addChild(cpuBullet)
+        
+        let cpuMoveBullet = SKAction.moveTo(y: cpuBullet.size.height - self.size.height, duration: 1)
+        let cpuDeleteBullet = SKAction.removeFromParent()
+        let cpuBulletSequence = SKAction.sequence([cpuMoveBullet, cpuDeleteBullet])
+        cpuBullet.run(cpuBulletSequence)
+    }
+
+        
+    }
+
+
+
