@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  HealthHack
 //
-//  Created by Sai Girap on 2/13/18.
+//  Created by Sai Girap on 3/20/18.
 //  Copyright © 2018 Sai Girap. All rights reserved.
 //
 
@@ -11,43 +11,44 @@ import HealthKit
 
 let healthkitStore = HKHealthStore()
 
+
 class ViewController: UIViewController
 {
     
-    
+    @IBOutlet var enableHealthKitButton: UIButton!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        getHealthKitPermission()
         
-        readSteps()
-           
-        
+       
     }
+    
+    @IBAction func enableHealthKit(_ sender: Any)
+    {
+        getHealthKitPermission()
+    }
+    
     
     func getHealthKitPermission()
     {
         let healthkitTypesToRead = NSSet(array: [
-            
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount) ?? "",
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed) ?? "",
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height) ?? "",
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass) ?? "",
             ])
         
-        let healthkitTypesToWrite = NSSet(array: [])
         
-        healthkitStore.requestAuthorization(toShare: healthkitTypesToWrite as? Set, read: healthkitTypesToRead as? Set) { (success, error) in
+        healthkitStore.requestAuthorization(toShare: nil, read: healthkitTypesToRead as? Set) { (success, error) in
             if success
             {
                 print("Permission accept.")
+                self.saveWeight()
+                self.saveHeight()
+                self.saveSteps()
                 self.readHeight()
                 self.readWeight()
                 self.readSteps()
-                self.saveWeight()
-                self.saveHeight()
-                
             }
             else
             {
@@ -59,7 +60,6 @@ class ViewController: UIViewController
             }
         }
     }
-    
     
     func saveHeight()
     {
@@ -86,7 +86,21 @@ class ViewController: UIViewController
             })
         }
     }
-
+    
+    func saveSteps()
+    {
+        if let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        {
+            let date = Date()
+            let quantity = HKQuantity(unit: HKUnit.count(), doubleValue: 100.0)
+            let sample = HKQuantitySample(type: type, quantity: quantity, start: date, end: date)
+            healthkitStore.save(sample, withCompletion: { (success, error) in
+                print("Saved \(success), error \(error)")
+            })
+        }
+    }
+    
+//--------------------------------------------------------------------
     
     func readWeight()
     {
@@ -122,7 +136,7 @@ class ViewController: UIViewController
     
     func readSteps()
     {
-        let steps = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+        let steps = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
         let query = HKSampleQuery(sampleType: steps, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
             if let result = results?.first as? HKQuantitySample
             {
@@ -135,12 +149,20 @@ class ViewController: UIViewController
         }
         healthkitStore.execute(query)
     }
+ 
     
-    @IBAction func healthStats(_ sender: Any)
-    {
-     //   print(HKQuantityTypeIdentifier.bodyMass)
-    }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     
   
     

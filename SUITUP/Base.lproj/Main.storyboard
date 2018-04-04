@@ -43,13 +43,12 @@
                                 <rect key="frame" x="0.0" y="642" width="141" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Health Stats">
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
+                                <state key="normal" title="Enable HealthKit">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="healthStats:" destination="4XY-P2-taf" eventType="touchUpInside" id="FKN-nR-XSA"/>
-                                    <segue destination="jnf-7z-0bD" kind="show" id="eVA-Vd-Lca"/>
+                                    <action selector="enableHealthKit:" destination="4XY-P2-taf" eventType="touchUpInside" id="2Lo-LV-bAO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health Hack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWv-um-T7p">
@@ -97,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJV-26-fzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="104"/>
+            <point key="canvasLocation" x="1" y="-398"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="kIm-3l-qrS">
@@ -125,10 +124,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sv-hq-nOM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="115"/>
+            <point key="canvasLocation" x="0.0" y="350"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LNp-eT-opo"/>
+        <segue reference="KfN-QT-YON"/>
     </inferredMetricsTieBreakers>
 </document>
