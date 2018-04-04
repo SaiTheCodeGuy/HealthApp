@@ -59,34 +59,33 @@ class GameScene: SKScene {
         //cpu.position = CGPoint(x: Int(randomNumber - 375), y: 520)
         var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.width, duration: 1)
         let cpuSequence = SKAction.sequence([moveCpu])
-        var unlimited = 1
+        let unlimited = 1
         
-//        while unlimited < 2
-//        {
-//        if cpu.position == CGPoint(x: -375, y: 520)
-//        {
-//
-//            var moveCpu = SKAction.moveTo(x:self.size.width - cpu.size.width, duration: 1)
-//
-//        }
-//        else if cpu.position == CGPoint(x: 375, y: 520)
-//        {
-//
-//            var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.width, duration: 1)
-//        }
-//          else if cpu.position == CGPoint(x: 0, y: 520)
-//            {
-//
-//                var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.height, duration: 1)
-//
-//                print("Hi")
-//            }
-// cpu.run(cpuSequence)
-//
-//
-//        }
+        
+        if cpu.position == CGPoint(x: -375, y: 520)
+        {
 
-        cpu.run(cpuSequence)
+            var moveCpu = SKAction.moveTo(x:self.size.width - cpu.size.width, duration: 1)
+
+        }
+        else if cpu.position == CGPoint(x: 375, y: 520)
+        {
+
+            var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.width, duration: 1)
+        }
+          else if cpu.position == CGPoint(x: 0, y: 520)
+            {
+
+                var moveCpu = SKAction.moveTo(x:cpu.size.width - self.size.height, duration: 1)
+
+                print("Hi")
+            }
+            cpu.run(cpuSequence)
+
+
+        
+
+            cpu.run(cpuSequence)
 
         
         
